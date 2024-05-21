@@ -91,7 +91,6 @@ class UserResource extends Resource implements HasShieldPermissions
             ]);
     }
 
-
     public static function getRelations(): array
     {
         return [
