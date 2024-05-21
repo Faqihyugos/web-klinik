@@ -63,7 +63,7 @@ class PatientAppoinmentPolicy
      */
     public function forceDelete(User $user, PatientAppoinment $patientAppoinment): bool
     {
-        return $user->can('force_delete_patient::appoinment');
+        return $user->can('{{ ForceDelete }}');
     }
 
     /**
@@ -71,7 +71,7 @@ class PatientAppoinmentPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_patient::appoinment');
+        return $user->can('{{ ForceDeleteAny }}');
     }
 
     /**
@@ -79,7 +79,7 @@ class PatientAppoinmentPolicy
      */
     public function restore(User $user, PatientAppoinment $patientAppoinment): bool
     {
-        return $user->can('restore_patient::appoinment');
+        return $user->can('{{ Restore }}');
     }
 
     /**
@@ -87,7 +87,7 @@ class PatientAppoinmentPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_patient::appoinment');
+        return $user->can('{{ RestoreAny }}');
     }
 
     /**
@@ -95,7 +95,7 @@ class PatientAppoinmentPolicy
      */
     public function replicate(User $user, PatientAppoinment $patientAppoinment): bool
     {
-        return $user->can('replicate_patient::appoinment');
+        return $user->can('{{ Replicate }}');
     }
 
     /**
@@ -103,6 +103,6 @@ class PatientAppoinmentPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_patient::appoinment');
+        return $user->can('{{ Reorder }}');
     }
 }

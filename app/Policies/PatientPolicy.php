@@ -63,7 +63,7 @@ class PatientPolicy
      */
     public function forceDelete(User $user, Patient $patient): bool
     {
-        return $user->can('force_delete_patient');
+        return $user->can('{{ ForceDelete }}');
     }
 
     /**
@@ -71,7 +71,7 @@ class PatientPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->can('force_delete_any_patient');
+        return $user->can('{{ ForceDeleteAny }}');
     }
 
     /**
@@ -79,7 +79,7 @@ class PatientPolicy
      */
     public function restore(User $user, Patient $patient): bool
     {
-        return $user->can('restore_patient');
+        return $user->can('{{ Restore }}');
     }
 
     /**
@@ -87,7 +87,7 @@ class PatientPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->can('restore_any_patient');
+        return $user->can('{{ RestoreAny }}');
     }
 
     /**
@@ -95,7 +95,7 @@ class PatientPolicy
      */
     public function replicate(User $user, Patient $patient): bool
     {
-        return $user->can('replicate_patient');
+        return $user->can('{{ Replicate }}');
     }
 
     /**
@@ -103,6 +103,6 @@ class PatientPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->can('reorder_patient');
+        return $user->can('{{ Reorder }}');
     }
 }
